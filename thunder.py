@@ -1,8 +1,8 @@
-import base64, codecs
+import base64
+import codecs
 import requests
 import os
 import json
-import base64
 import winreg
 import shutil
 import psutil
