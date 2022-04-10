@@ -1,6 +1,6 @@
 discord
 discord_webhook
-Crytpo
+Crypto
 requests
 colorama
 cryptography
