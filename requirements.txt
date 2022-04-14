@@ -1,0 +1,11 @@
+discord
+discord_webhook
+Crypto
+pypiwin32
+requests
+colorama
+cryptography
+pycryptodome
+psutil
+pillow
+getmac
