@@ -45,6 +45,7 @@ from Crypto import Random
 from Crypto.Cipher import AES
 from win32crypt import CryptUnprotectData
 from PIL import ImageGrab
+from sys import argv
 from threading import Thread
 from re import findall, match
 from discord import File, Webhook, RequestsWebhookAdapter
