@@ -34,6 +34,7 @@ import shutil
 import psutil
 import random
 import zipfile
+import hashlib
 import socket
 import sqlite3
 import platform
