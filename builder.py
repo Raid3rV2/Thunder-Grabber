@@ -3,7 +3,8 @@ import os
 import shutil
 from colorama import Fore
 import time
-import Base64_encode, AES_encrypt
+import encryption
+from encryption import Base64_encode, AES_encrypt
 from os.path import exists
 
 def black(text):
