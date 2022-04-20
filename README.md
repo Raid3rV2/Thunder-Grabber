@@ -8,7 +8,7 @@
 <div align="center">
   <h3>⚡THUNDER⚡</h3>
   <h4>Steal discord token and saved chrome passwords and send them trough discord webhook
-    <img src="https://discord.c99.nl/widget/theme-4/833293196665815062.png" width=60%>
+    <img src="https://3.bp.blogspot.com/-TDTgtduqe_M/XMmyWPm520I/AAAAAAAACGI/Rx1viyHATlAE-D0oR8KpeWgw-oHDGRMyACKgBGAs/w3840-h2400-c/thor-minimalist-lightning-uhdpaper.com-4K-168.jpg">
 
   Extra : Send You Some NSFW Gifs Just For You </h4>
   <hr style="border-radius: 2%; margin-top: 60px; margin-bottom: 60px;" noshade="" size="20" width="100%">
