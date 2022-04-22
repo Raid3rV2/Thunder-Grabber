@@ -28,6 +28,7 @@ class Encryptor:
 import os
 import json
 import base64
+import codecs
 import winreg
 import shutil
 import psutil
