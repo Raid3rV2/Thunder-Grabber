@@ -30,6 +30,7 @@ import json
 import base64
 import codecs
 import winreg
+import hashlib
 import shutil
 import psutil
 import random
