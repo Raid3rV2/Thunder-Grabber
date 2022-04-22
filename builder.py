@@ -6,7 +6,7 @@ import shutil
 from colorama import Fore
 import time
 from pystyle import Anime, Colorate, Colors, Center, System, Write
-import Base64_encode, AES_encrypt
+from encryption import Base64_encode, AES_encrypt
 from os.path import exists
 
 def blue(text):
