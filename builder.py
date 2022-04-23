@@ -1,3 +1,6 @@
+#Thunder Grabber Was Made BY TWISTX7#9122
+#https://github.com/TWIST-X7/Thunder-Grabber
+
 from asyncore import write
 from tkinter import W
 import requests
