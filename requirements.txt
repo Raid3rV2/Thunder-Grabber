@@ -1,6 +1,7 @@
 discord
 discord_webhook
 Crypto
+httpx
 pypiwin32
 requests
 colorama
