@@ -37,6 +37,7 @@ import socket
 import sqlite3
 import codecs
 import platform
+import hashlib
 import win32crypt
 import subprocess
 import sys
