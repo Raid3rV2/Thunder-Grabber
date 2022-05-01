@@ -60,7 +60,7 @@
 <hr style="border-radius: 2%; margin-top: 60px; margin-bottom: 60px;" noshade="" size="20" width="100%">
 
 #### Credits
-- [Rdimo#6968](https://github.com/Rdimo) (For Making the Injecion)
+- [Rdimo#6969](https://github.com/Rdimo) (For Making the Injecion)
 - [addidix.#0506](https://github.com/addi00000) (For Making the README)
 
 #### Errors?
